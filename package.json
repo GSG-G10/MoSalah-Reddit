@@ -25,6 +25,7 @@
     "supertest": "^6.1.6"
   },
   "scripts": {
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
