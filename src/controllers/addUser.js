@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const jwt = require('jsonwebtoken');
 const signUpSchema = require('../utils/validation');
 const addusers = require('../database/queries/addUser');
 const hashPassword = require('../utils/hashPassword');
@@ -13,7 +14,14 @@ const add = (req, res) => {
   } else {
     console.log('tesssssssss');
     hashPassword(password).then((hashedPassword) => addusers(username, email, hashedPassword))
-      .then(() => res.redirect('/login'))
+      .then(() => jwt.sign({ is_user: true }, 'sha125', (errors, token) => {
+        if (errors) {
+          console.log(error);
+          res.status(500).json({ msg: 'internal server error !' });
+        } else {
+          res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 900000 }).cookie('user', true).redirect('/');
+        }
+      }))
       .catch((err) => console.log(err));
   }
 };
