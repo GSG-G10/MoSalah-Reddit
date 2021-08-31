@@ -1,9 +1,4 @@
-const express = require('express');
-
-const router = express.Router();
 const { notFound, internalServer } = require('./error');
+const add = require('./addUser');
 
-router.use(notFound);
-router.use(internalServer);
-
-module.exports = router;
+module.exports = { notFound, internalServer, add };
