@@ -10,15 +10,11 @@
 </head>
 
 <body>
-    <form class="login-card">
+    <form class="login-card" action="/signup" method="POST">
         <h3>Sign Up</h3>
         <div class="input">
-            <label for="fist_name">First name</label>
-            <input type="text" placeholder="Enter Your fist name" name="fist_name">
-        </div>
-        <div class="input">
-            <label for="last_name">Last Name</label>
-            <input type="text" placeholder="Enter Your list name" name="last_name">
+            <label for="user_name">User Name</label>
+            <input type="text" placeholder="Enter Your name" name="user_name">
         </div>
         <div class="input">
             <label for="email">Email</label>
@@ -28,8 +24,12 @@
             <label for="password">Password</label>
             <input type="password" placeholder="Enter Your Password" name="password">
         </div>
-        <div class="btn-login">Sign up</div>
-        <p class="new-accout">Are You have account? <a href="login.html">Sign Up</a>
+        <div class="input">
+            <label for="confermPassword">Conferm Password</label>
+            <input type="password" placeholder="Enter Your Password" name="confermPassword">
+        </div>
+        <button type="submit" class="btn-login">Sign up</button>
+        <p class="new-accout">Are You have account? <a href="/login">Sign Up</a>
         </p>
     </form>
 
