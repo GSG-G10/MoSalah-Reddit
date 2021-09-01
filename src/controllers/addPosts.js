@@ -1,10 +1,10 @@
 const insertPost = require('../database/queries/addPost');
 
 const addPost = (req, res) => {
-  const { user_id: userId, title, content } = req.body;
-  insertPost(userId, title, content)
+  const { title, content } = req.body;
+  insertPost(title, content)
     .then(() => {
-      res.send('done');
+      res.redirect('/');
     }).catch((err) => {
       res.json(err.detail);
     });

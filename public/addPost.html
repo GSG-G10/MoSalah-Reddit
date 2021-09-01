@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/forms.css">
+    <title>Create Post</title>
+</head>
+
+<body>
+    <section>
+        <form class="create-post" action="/post" method="POST">
+            <h3 class="title-header">It is your space </h3>
+            <div class="input">
+                <label class="title" for="title">Tilte</label>
+                <input type="text" placeholder="Enter Your title" name="title">
+            </div>
+            <div class="input">
+                <label class="content" for="content">Content</label>
+                <textarea placeholder="Email Your Content" name="content" rows="10" cols="100"></textarea>
+            </div>
+            <button type="submit" class="btn-add">add</button>
+            </p>
+        </form>
+    </section>
+    <script src="js/dom.js"></script>
+
+</body>
+
+</html>
