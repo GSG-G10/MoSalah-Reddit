@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 const jwt = require('jsonwebtoken');
-const signUpSchema = require('../utils/validation');
-const addusers = require('../database/queries/addUser');
-const hashPassword = require('../utils/hashPassword');
+const { signUpSchema } = require('../utils/validation');
+const { addusers } = require('../database/queries/addUser');
+const { hashPassword } = require('../utils/hashPassword');
 
 // eslint-disable-next-line no-unused-vars
 const add = (req, res) => {
