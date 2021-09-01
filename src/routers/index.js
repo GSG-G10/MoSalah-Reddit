@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { join } = require('path');
 const {
-  notFound, internalServer, add, login, getPost,
+  notFound, internalServer, add, login, getPost, addPost,
 } = require('../controllers');
 
 router.get('/login', (req, res) => {
@@ -12,6 +12,7 @@ router.get('/signup', (req, res) => {
   res.sendFile(join(__dirname, '..', '..', 'public', 'signUp.html'));
 });
 router.get('/post', getPost);
+router.post('/post', addPost);
 router.post('/signup', add);
 router.post('/login', login);
 
