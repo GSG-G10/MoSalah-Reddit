@@ -26,4 +26,8 @@ INSERT INTO users (user_name,email, password) VALUES
 ('msahah7','mosalah@gmail.com','salah1234'),
 ('ahmed5','ahmedsalah@gmail.com','salah1234'),
 ('ali6','alidsalah@gmail.com','salah1234');
+INSERT INTO posts (users_id, title, content) VALUES
+(1,'Mohammed Salah','He is a best football palyer'),
+(2,'Messi','He is a best football palyer'),
+(3,'Suaraz','He is a best football palyer');
 COMMIT;
