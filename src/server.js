@@ -12,5 +12,5 @@ app.use(express.static(path.join(__dirname, '..', 'public'), { maxAge: '30d' }))
 
 app.use(router);
 
-app.set('port', process.env.PORT || 9000);
+app.set('port', process.env.PORT || 5050);
 module.exports = app;
