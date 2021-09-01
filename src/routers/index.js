@@ -11,7 +11,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.sendFile(join(__dirname, '..', '..', 'public', 'signUp.html'));
 });
-router.get('/post', getPost);
+router.get('/posts', getPost);
 router.post('/post', addPost);
 router.post('/signup', add);
 router.post('/login', login);

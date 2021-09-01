@@ -103,10 +103,14 @@ body {
 .img-post {
   width: 100%;
 }
-.user-name,
+
 .time {
   color: #797979;
   font-size: 12px;
+}
+.user-name{
+  color: #e00d0d;
+  font-size: 20px;
 }
 
 .post-title {
