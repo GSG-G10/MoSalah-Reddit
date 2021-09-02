@@ -19,7 +19,7 @@ const add = (req, res) => {
           console.log(error);
           res.status(500).json({ msg: 'internal server error !' });
         } else {
-          res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 900000 }).cookie('user', true).redirect('/');
+          res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 900000 }).cookie('user', username).redirect('/');
         }
       }))
       .catch((err) => res.json(err));

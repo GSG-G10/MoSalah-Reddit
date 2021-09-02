@@ -1,9 +1,11 @@
 const path = require('path');
 const express = require('express');
 const compression = require('compression');
+const cookie = require('cookie-parser');
 const router = require('./routers');
 
 const app = express();
+app.use(cookie());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(compression());
