@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { join } = require('path');
 const {
-  notFound, internalServer, add, login, getPost, addPost,
+  notFound, internalServer, add, login, getPost, addPost, logout,
 } = require('../controllers');
 
 router.get('/login', (req, res) => {
@@ -19,6 +19,7 @@ router.get('/posts', getPost);
 router.post('/post', addPost);
 router.post('/signup', add);
 router.post('/login', login);
+router.post('/logout', logout);
 
 router.use(notFound);
 router.use(internalServer);

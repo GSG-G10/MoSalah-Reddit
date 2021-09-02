@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const jwt = require('jsonwebtoken');
 const { signUpSchema } = require('../utils/validation');
-const { addusers } = require('../database/queries/addUser');
+const addusers = require('../database/queries/addUser');
 const { hashPassword } = require('../utils/hashPassword');
 
 // eslint-disable-next-line no-unused-vars
@@ -22,7 +22,7 @@ const add = (req, res) => {
           res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 900000 }).cookie('user', true).redirect('/');
         }
       }))
-      .catch((err) => console.log(err));
+      .catch((err) => res.json(err));
   }
 };
 
