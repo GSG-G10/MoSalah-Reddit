@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+  
+  }
+  
+  .container{
+    display: flex;
+    font-size: 25px;
+    /* border: 1px solid red; */
+  }
+  h1{
+    margin: auto;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    /* border: 1px solid red; */
+
+  }
+  .info-user{ 
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+
+  }
+  .name-user,.email-user{
+    padding: 10px;
+
+  }
+  
+
+  

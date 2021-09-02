@@ -18,7 +18,7 @@ fetch('/posts')
       const sectiontPostContent = createElement('article', 'post-content', post);
       const topSection = createElement('div', 'top-section', sectiontPostContent);
       const sectiontInfoUser = createElement('div', 'info-user', topSection);
-      createElement('span', 'user-name', sectiontInfoUser, `${element.users_id}  `);
+      createElement('span', 'user-name', sectiontInfoUser, `${element.user_name}  `);
       createElement('span', 'time', sectiontInfoUser, element.data_created);
       createElement('h3', 'post-title', topSection, element.title);
       createElement('p', 'img-post', topSection, element.content);
