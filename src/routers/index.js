@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { join } = require('path');
 const {
-  notFound, internalServer, add, login, getPost, addPost, logout, profile,
+  notFound, internalServer, add, login,
+  getPost, addPost, logout, profile, userPosts,
 } = require('../controllers');
 
 router.get('/login', (req, res) => {
@@ -24,6 +25,7 @@ router.post('/signup', add);
 router.post('/login', login);
 router.post('/logout', logout);
 router.get('/profiles', profile);
+router.get('/userpost', userPosts);
 
 router.use(notFound);
 router.use(internalServer);

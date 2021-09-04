@@ -14,14 +14,18 @@ const add = (req, res) => {
   } else {
     console.log('tesssssssss');
     hashPassword(password).then((hashedPassword) => addusers(username, email, hashedPassword))
-      .then(() => jwt.sign({ is_user: true }, 'sha125', (errors, token) => {
-        if (errors) {
-          console.log(error);
-          res.status(500).json({ msg: 'internal server error !' });
-        } else {
-          res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 900000 }).cookie('user', username).redirect('/');
-        }
-      }))
+      .then(() => jwt.sign({ is_user: true, user: username },
+        process.env.SECRET_KEY, (errors, token) => {
+          if (errors) {
+            console.log(error);
+            res.status(500).json({ msg: 'internal server error !' });
+          } else {
+            res.cookie('token', token, { httpOnly: true, secure: true, maxAge: 900000 })
+              .cookie('user', username)
+              .cookie('is_user', true)
+              .redirect('/');
+          }
+        }))
       .catch((err) => res.json(err));
   }
 };
