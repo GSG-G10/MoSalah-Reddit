@@ -17,3 +17,16 @@ fetch('/profiles')
       createElement('span', 'email-user', card, `Email : ${element.email}`);
     });
   });
+
+fetch('/userpost')
+  .then((result) => result.json())
+  .then((userpost) => {
+    userpost.forEach((element) => {
+      const card = createElement('section', 'user-post', container);
+      const post = createElement('div', 'posts', card);
+      createElement('h3', 'title', post, element.title);
+      createElement('p', 'content', post, element.content);
+      createElement('span', 'votes', post, element.votes);
+      createElement('span', 'data', post, element.data_created);
+    });
+  });
